@@ -70,8 +70,8 @@ void AGGJ2019Character::SetupPlayerInputComponent(class UInputComponent* PlayerI
 	PlayerInputComponent->BindAxis("LookUpRate", this, &AGGJ2019Character::LookUpAtRate);
 
 	// handle touch devices
-	PlayerInputComponent->BindTouch(IE_Pressed, this, &AGGJ2019Character::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &AGGJ2019Character::TouchStopped);
+	//PlayerInputComponent->BindTouch(IE_Pressed, this, &AGGJ2019Character::TouchStarted);
+	//PlayerInputComponent->BindTouch(IE_Released, this, &AGGJ2019Character::TouchStopped);
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AGGJ2019Character::OnResetVR);
