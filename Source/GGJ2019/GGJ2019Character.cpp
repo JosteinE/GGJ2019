@@ -35,6 +35,7 @@ AGGJ2019Character::AGGJ2019Character()
 	// Create a camera boom (pulls in towards the player if there is a collision)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
+	CameraBoom->SetRelativeLocation(FVector(0.f, 0.f, 100.f));
 	CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character	
 	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
 
@@ -54,8 +55,8 @@ void AGGJ2019Character::SetupPlayerInputComponent(class UInputComponent* PlayerI
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AGGJ2019Character::IsJumping);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AGGJ2019Character::IsNotJumping);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGGJ2019Character::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGGJ2019Character::MoveRight);
@@ -131,4 +132,15 @@ void AGGJ2019Character::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void AGGJ2019Character::IsJumping()
+{
+	bIsJumping = true;
+	Jump();
+}
+
+void AGGJ2019Character::IsNotJumping()
+{
+	bIsJumping = false;
 }
