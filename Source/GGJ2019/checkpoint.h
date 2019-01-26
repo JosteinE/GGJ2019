@@ -20,13 +20,13 @@ protected:
 	virtual void BeginPlay() override;
 
 	// Box collider
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	/*UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		UBoxComponent *BoxCollider = nullptr;
 
 	// Hit event
 	UFUNCTION(BlueprintCallable)
 		void OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
-
+		*/
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

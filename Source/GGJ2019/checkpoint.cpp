@@ -11,9 +11,10 @@ Acheckpoint::Acheckpoint()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box collider"));
+	/*BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box collider"));
 	RootComponent = BoxCollider;
 	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &Acheckpoint::OnHit);
+	*/
 }
 
 // Called when the game starts or when spawned
@@ -30,7 +31,7 @@ void Acheckpoint::Tick(float DeltaTime)
 
 }
 
-void Acheckpoint::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult) {
+//void Acheckpoint::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult) {
 	/*if (OtherActor->IsA(APlayableCharacterBase::StaticClass()) && GetWorld() && Cast<APawn>(OtherActor) && Cast<APawn>(OtherActor)->GetController())
 	{
 		auto *playerController = Cast<ACustomPlayerController>(Cast<APawn>(OtherActor)->GetController());
@@ -39,5 +40,5 @@ void Acheckpoint::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherA
 			playerController->LastCheckpoint = this;
 		}
 		*/
-}
+//}
 
