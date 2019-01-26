@@ -68,5 +68,14 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float playerHealth = 100;
+
+	//Input variables
+	bool bIsJumping;
+	//Input functions
+	void IsJumping();
+	void IsNotJumping();
 };
 
