@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "ItemBase.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AGGJ2019Character
@@ -47,6 +48,24 @@ AGGJ2019Character::AGGJ2019Character()
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
+
+/*
+UItemBase * AGGJ2019Character::getItem(int32 index)
+{
+	if (index < inventory.Num() && index >= 0) {
+		return inventory[index];
+	}
+	return nullptr;
+}
+
+void AGGJ2019Character::Equip(int32 index)
+{
+	UItemBase* item = getItem(index);
+	if (item != nullptr) {
+		currentlyEquipped = item;
+	}
+}
+*/
 
 //////////////////////////////////////////////////////////////////////////
 // Input
