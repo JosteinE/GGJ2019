@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "GGJ2019Character.generated.h"
 
+// Forward declarations
+class UItemBase;
+
 UCLASS(config=Game)
 class AGGJ2019Character : public ACharacter
 {
@@ -29,7 +32,17 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	//UItemBase* getItem(int32 index);
+
+	//// UFUNCTION(BlueprintCallable)
+	//void Equip(int32 index);
+
+
+	//TArray<UItemBase*> inventory;
+
 protected:
+	// The currently equipped item
+	// UItemBase *currentlyEquipped = nullptr;
 
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
@@ -78,4 +91,3 @@ public:
 	void IsJumping();
 	void IsNotJumping();
 };
-
