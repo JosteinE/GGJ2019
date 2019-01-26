@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "checkpoint.generated.h"
 
+// Forward declare
+class UBoxComponent;
+
 UCLASS()
 class GGJ2019_API Acheckpoint : public AActor
 {

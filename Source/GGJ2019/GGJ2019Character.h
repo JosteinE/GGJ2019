@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <vector>
 #include "GameFramework/Character.h"
 #include "GGJ2019Character.generated.h"
 
@@ -29,7 +30,19 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	// Inventory system thingy
+	struct item {
+		// temporary item-type
+	};
+
+	void pickup(const item &i);
+	item& getItem(int32 index);
+	unsigned int getInventorySize() const;
+	void drop(const item &i);
+
 protected:
+
+	TArray<item> inventory;
 
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();

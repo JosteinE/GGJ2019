@@ -78,6 +78,31 @@ void AGGJ2019Character::SetupPlayerInputComponent(class UInputComponent* PlayerI
 }
 
 
+void AGGJ2019Character::pickup(const item & i)
+{
+	inventory.Add(i);
+}
+
+AGGJ2019Character::item & AGGJ2019Character::getItem(int32 index)
+{
+	if (index < inventory.Num()) {
+		return inventory[index];
+	}
+	else {
+		return inventory[0];
+	}
+}
+
+unsigned int AGGJ2019Character::getInventorySize() const
+{
+	return inventory.Num();
+}
+
+void AGGJ2019Character::drop(const item & i)
+{
+	inventory.Remove(i);
+}
+
 void AGGJ2019Character::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "checkpoint.h"
-#include "components/BoxComponent.h"
+#include "Components/BoxComponent.h"
 #include "Engine/World.h"
 #include "GGJ2019GameMode.h"
 
@@ -31,7 +31,8 @@ void Acheckpoint::Tick(float DeltaTime)
 }
 
 void Acheckpoint::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult) {
-	auto *gamemode = GetWorld()->GetAuthGameMode<GGJ2019GameMode>();
+	/*
+	auto *gamemode = GetWorld()->GetAuthGameMode<AGGJ2019GameMode>();
 	if (gamemode && playerController)
 	{
 		auto *playerStart = gamemode->FindPlayerStart(playerController);
@@ -41,5 +42,6 @@ void Acheckpoint::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherA
 			Destroy();
 		}
 	}
+	*/
 }
 
