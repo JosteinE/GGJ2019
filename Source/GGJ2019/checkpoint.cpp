@@ -31,15 +31,13 @@ void Acheckpoint::Tick(float DeltaTime)
 }
 
 void Acheckpoint::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult) {
-	auto *gamemode = GetWorld()->GetAuthGameMode<GGJ2019GameMode>();
-	if (gamemode && playerController)
+	/*if (OtherActor->IsA(APlayableCharacterBase::StaticClass()) && GetWorld() && Cast<APawn>(OtherActor) && Cast<APawn>(OtherActor)->GetController())
 	{
-		auto *playerStart = gamemode->FindPlayerStart(playerController);
-		if (playerStart)
+		auto *playerController = Cast<ACustomPlayerController>(Cast<APawn>(OtherActor)->GetController());
+		if (playerController)
 		{
-			playerStart->SetActorLocation(FVector{ playerStart->GetActorLocation().Z, GetActorLocation().Y, GetActorLocation().Z });
-			Destroy();
+			playerController->LastCheckpoint = this;
 		}
-	}
+		*/
 }
 
