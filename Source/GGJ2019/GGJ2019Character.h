@@ -82,11 +82,17 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float playerHealth = 100;
 
 	//Input variables
 	bool bIsJumping;
+
+	bool bHasAxe;
+	bool bHasTorch;
+	bool bHasKey;
+	bool bHasSpade;
+
 	//Input functions
 	void IsJumping();
 	void IsNotJumping();
