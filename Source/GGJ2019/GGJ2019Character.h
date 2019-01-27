@@ -85,15 +85,49 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float playerHealth = 100;
 
+	//Items unlocked
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUnlockedAxe;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUnlockedTorch;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUnlockedSpade;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUnlockedKey;
+
+	//Swinging current
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bSwingingCurrent;
+
+	//Item selected
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUsingAxe;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUsingTorch;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUsingSpade;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bUsingKey;
+
 	//Input variables
 	bool bIsJumping;
-
-	bool bHasAxe;
-	bool bHasTorch;
-	bool bHasKey;
-	bool bHasSpade;
+	bool bLeftMouseBDown;
 
 	//Input functions
+	void LeftMouseBDown();
+	void LeftMouseBUp();
+	void key1();
+	void key2();
+	void key3();
+	void key4();
 	void IsJumping();
 	void IsNotJumping();
+
+	void resetKeys();
 };
