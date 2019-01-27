@@ -80,6 +80,15 @@ void AGGJ2019Character::SetupPlayerInputComponent(class UInputComponent* PlayerI
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGGJ2019Character::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGGJ2019Character::MoveRight);
 
+
+	PlayerInputComponent->BindAction("LeftMouseB", IE_Pressed, this, &AGGJ2019Character::LeftMouseBDown);
+	PlayerInputComponent->BindAction("LeftMouseB", IE_Released, this, &AGGJ2019Character::LeftMouseBUp);
+
+	PlayerInputComponent->BindAction("key1", IE_Pressed, this, &AGGJ2019Character::key1);
+	PlayerInputComponent->BindAction("key2", IE_Pressed, this, &AGGJ2019Character::key2);
+	PlayerInputComponent->BindAction("key3", IE_Pressed, this, &AGGJ2019Character::key3);
+	PlayerInputComponent->BindAction("key4", IE_Pressed, this, &AGGJ2019Character::key4);
+
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
@@ -162,4 +171,58 @@ void AGGJ2019Character::IsJumping()
 void AGGJ2019Character::IsNotJumping()
 {
 	bIsJumping = false;
+}
+
+void AGGJ2019Character::LeftMouseBDown()
+{
+	bLeftMouseBDown = true;
+}
+
+void AGGJ2019Character::LeftMouseBUp()
+{
+	bLeftMouseBDown = false;
+}
+
+void AGGJ2019Character::key1()
+{
+	if (bUnlockedAxe)
+	{
+		resetKeys();
+		bUsingAxe = true;
+	}
+}
+
+void AGGJ2019Character::key2()
+{
+	if (bUnlockedTorch)
+	{
+		resetKeys();
+		bUsingTorch = true;
+	}
+}
+
+void AGGJ2019Character::key3()
+{
+	if (bUnlockedSpade)
+	{
+		resetKeys();
+		bUsingSpade = true;
+	}
+}
+
+void AGGJ2019Character::key4()
+{
+	if (bUnlockedKey)
+	{
+		resetKeys();
+		bUsingKey = true;
+	}
+}
+
+void AGGJ2019Character::resetKeys()
+{
+	bUsingAxe = false;
+	bUsingTorch = false;
+	bUsingSpade = false;
+	bUsingKey = false;
 }
