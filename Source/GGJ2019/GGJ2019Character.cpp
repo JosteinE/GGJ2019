@@ -164,13 +164,13 @@ void AGGJ2019Character::MoveRight(float Value)
 
 void AGGJ2019Character::IsJumping()
 {
-	bIsJumping = true;
-	Jump();
+	//bIsJumping = true;
+	//Jump();
 }
 
 void AGGJ2019Character::IsNotJumping()
 {
-	bIsJumping = false;
+	//bIsJumping = false;
 }
 
 void AGGJ2019Character::LeftMouseBDown()
