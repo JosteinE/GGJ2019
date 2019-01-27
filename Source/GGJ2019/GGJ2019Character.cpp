@@ -84,10 +84,10 @@ void AGGJ2019Character::SetupPlayerInputComponent(class UInputComponent* PlayerI
 	PlayerInputComponent->BindAction("LeftMouseB", IE_Pressed, this, &AGGJ2019Character::LeftMouseBDown);
 	PlayerInputComponent->BindAction("LeftMouseB", IE_Released, this, &AGGJ2019Character::LeftMouseBUp);
 
-	PlayerInputComponent->BindAction("key1", IE_Pressed, this, &AGGJ2019Character::key1);
-	PlayerInputComponent->BindAction("key2", IE_Pressed, this, &AGGJ2019Character::key2);
-	PlayerInputComponent->BindAction("key3", IE_Pressed, this, &AGGJ2019Character::key3);
-	PlayerInputComponent->BindAction("key4", IE_Pressed, this, &AGGJ2019Character::key4);
+	PlayerInputComponent->BindAction("Key1", IE_Pressed, this, &AGGJ2019Character::key1);
+	PlayerInputComponent->BindAction("Key2", IE_Pressed, this, &AGGJ2019Character::key2);
+	PlayerInputComponent->BindAction("Key3", IE_Pressed, this, &AGGJ2019Character::key3);
+	PlayerInputComponent->BindAction("Key4", IE_Pressed, this, &AGGJ2019Character::key4);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
