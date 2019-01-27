@@ -87,33 +87,33 @@ public:
 
 	//Items unlocked
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bUnlockedAxe;
+	bool bUnlockedAxe = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bUnlockedTorch;
+	bool bUnlockedTorch = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bUnlockedSpade;
+	bool bUnlockedSpade = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bUnlockedKey;
+	bool bUnlockedKey = false;
 
 	//Swinging current
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool bSwingingCurrent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bSwingingCurrent = false;
 
 	//Item selected
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool bUsingAxe;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bUsingAxe = false;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool bUsingTorch;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bUsingTorch = false;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool bUsingSpade;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bUsingSpade = false;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool bUsingKey;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bUsingKey = false;
 
 	//Input variables
 	bool bIsJumping;

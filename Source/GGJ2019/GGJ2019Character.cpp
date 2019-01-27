@@ -176,11 +176,13 @@ void AGGJ2019Character::IsNotJumping()
 void AGGJ2019Character::LeftMouseBDown()
 {
 	bLeftMouseBDown = true;
+	bSwingingCurrent = true;
 }
 
 void AGGJ2019Character::LeftMouseBUp()
 {
 	bLeftMouseBDown = false;
+	bSwingingCurrent = false;
 }
 
 void AGGJ2019Character::key1()
